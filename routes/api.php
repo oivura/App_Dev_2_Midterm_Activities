@@ -49,3 +49,8 @@ Route::delete('/delete', function () {
 	return respone()->json(['message' => 'delete request handled. ']);
 })->middleware(TokenCheckerMiddleware::class);
 
+//use App\Http\Controllers\ProductController;
+
+Route::post('/api/upload/local', [ProductController::class, 'uploadImageLocal']);
+
+Route::post('/api/upload/public', [ProductController::class, 'uploadImagePublic']);
